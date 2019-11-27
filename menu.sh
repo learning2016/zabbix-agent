@@ -12,6 +12,9 @@ function Initialize_the () {
 } 
 
 function Linux_system_monitoring () {
+      rpm -ivh http://repo.zabbix.com/zabbix/3.2/rhel/7/x86_64/zabbix-release-3.2-1.el7.noarch.rpm
+      yum -y install zabbix-sender zabbix-agent zabbix-get
+      rm -rf /etc/zabbix/zabbix_agentd.conf
       cd $pwd
       rm -rf zabbix_agentd.conf
       if [ -s zabbix_agentd.conf ]; then
