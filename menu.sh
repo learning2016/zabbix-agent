@@ -23,7 +23,7 @@ function Linux_system_monitoring () {
       fi
       
       cd $pwd
-      if [ -s zabbix_agentd.conf ]; then
+      if [ -e zabbix_agentd.conf ]; then
           echo "zabbix_agentd.conf [found]"
           rm -rf zabbix_agentd.conf
       else
@@ -51,7 +51,7 @@ function Linux_system_monitoring () {
 
 function Mysql_monitoring () {
       cd${pwd1} 
-      if [ -s input_mysql_ip.sh ]; then
+      if [ -e input_mysql_ip.sh ]; then
           echo "input_mysql_ip.sh [found]"
           rm -rf input_mysql_ip.sh
       else
@@ -62,7 +62,7 @@ function Mysql_monitoring () {
           fi
       fi
       
-      if [ -s nmap_mysql.sh ]; then
+      if [ -e nmap_mysql.sh ]; then
           echo "nmap_mysql.sh [found]"
           rm -rf nmap_mysql.sh
       else
@@ -73,7 +73,7 @@ function Mysql_monitoring () {
           fi
       fi
 
-      if [ -s userparameter_mysql.conf ]; then
+      if [ -e userparameter_mysql.conf ]; then
           echo "userparameter_mysql.conf [found]"
           rm -rf userparameter_mysql.conf
       else
@@ -94,7 +94,7 @@ function Mysql_monitoring () {
 
 function MongoDB_monitoring () {
       cd${pwd1}
-      if [ -s input_mongodb_ip.sh ]; then
+      if [ -e input_mongodb_ip.sh ]; then
           echo "input_mongodb_ip.sh [found]"
           rm -rf input_mongodb_ip.sh
       else
@@ -105,7 +105,7 @@ function MongoDB_monitoring () {
           fi
       fi
       
-      if [ -s nmap_mongodb.sh ]; then
+      if [ -e nmap_mongodb.sh ]; then
           echo "nmap_mongodb.sh [found]"
           rm -rf nmap_mongodb.sh
       else
@@ -116,7 +116,7 @@ function MongoDB_monitoring () {
           fi
       fi
 
-      if [ -s userparameter_mongodb.conf ]; then
+      if [ -e userparameter_mongodb.conf ]; then
           echo "userparameter_mongodb.conf [found]"
           rm -rf userparameter_mongodb.conf
       else
@@ -137,7 +137,7 @@ function MongoDB_monitoring () {
 
 function Redis_monitoring () {
       cd${pwd1} 
-      if [ -s input_redis_ip.sh ]; then
+      if [ -e input_redis_ip.sh ]; then
           echo "input_redis_ip.sh [found]"
           rm -rf input_redis_ip.sh
       else
@@ -148,7 +148,7 @@ function Redis_monitoring () {
           fi
       fi
       
-      if [ -s nmap_redis.sh ]; then
+      if [ -e nmap_redis.sh ]; then
           echo "nmap_redis.sh [found]"
           rm -rf nmap_redis.sh
       else
@@ -159,7 +159,7 @@ function Redis_monitoring () {
           fi
       fi
 
-      if [ -s userparameter_redis.conf ]; then
+      if [ -e userparameter_redis.conf ]; then
           echo "userparameter_redis.conf [found]"
           rm -rf userparameter_redis.conf
       else
@@ -180,7 +180,7 @@ function Redis_monitoring () {
 
 function Memcache_monitoring () {
       cd${pwd1}
-      if [ -s input_memcache_ip.sh ]; then
+      if [ -e input_memcache_ip.sh ]; then
           echo "input_memcache_ip.sh [found]"
           rm -rf input_memcache_ip.sh
       else
@@ -191,7 +191,7 @@ function Memcache_monitoring () {
           fi
       fi
       
-      if [ -s nmap_memcache.sh ]; then
+      if [ -e nmap_memcache.sh ]; then
           echo "nmap_memcache.sh [found]"
           rm -rf nmap_memcache.sh
       else
@@ -202,7 +202,7 @@ function Memcache_monitoring () {
           fi
       fi
 
-      if [ -s userparameter_memcache.conf ]; then
+      if [ -e userparameter_memcache.conf ]; then
           echo "userparameter_memcache.conf [found]"
           rm -rf userparameter_memcache.conf
       else
