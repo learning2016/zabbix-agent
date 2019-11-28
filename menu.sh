@@ -23,9 +23,9 @@ function Linux_system_monitoring () {
       fi
       
       cd $pwd
-      rm -rf zabbix_agentd.conf
       if [ -s zabbix_agentd.conf ]; then
           echo "zabbix_agentd.conf [found]"
+          rm -rf zabbix_agentd.conf
       else
           echo "zabbix_agentd.conf not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/zabbix_agentd.conf; then
@@ -38,7 +38,7 @@ function Linux_system_monitoring () {
       echo "Hostname=$Hostname"
       echo "Hostname=$Hostname">>/etc/zabbix/zabbix_agentd.conf
       
-      if grep -q 6 /etc/redhat-release; then
+      if grep -q 7. /etc/redhat-release; then
             systemctl start zabbix-agent.service
             systemctl enable zabbix-agent.service
             systemctl restart zabbix-agent.service;
@@ -51,9 +51,9 @@ function Linux_system_monitoring () {
 
 function Mysql_monitoring () {
       cd${pwd1} 
-      rm -rf input_mysql_ip.sh
       if [ -s input_mysql_ip.sh ]; then
           echo "input_mysql_ip.sh [found]"
+          rm -rf input_mysql_ip.sh
       else
           echo "input_mysql_ip.sh not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/input_mysql_ip.sh; then
@@ -64,6 +64,7 @@ function Mysql_monitoring () {
       
       if [ -s nmap_mysql.sh ]; then
           echo "nmap_mysql.sh [found]"
+          rm -rf nmap_mysql.sh
       else
           echo "nmap_mysql.sh not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/nmap_mysql.sh; then
@@ -74,6 +75,7 @@ function Mysql_monitoring () {
 
       if [ -s userparameter_mysql.conf ]; then
           echo "userparameter_mysql.conf [found]"
+          rm -rf userparameter_mysql.conf
       else
           echo "userparameter_mysql.conf not found!!!download now..."
       if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/userparameter_mysql.conf; then
@@ -83,7 +85,7 @@ function Mysql_monitoring () {
       fi
      
       bash input_mysql_ip.sh
-      if grep -q 6 /etc/redhat-release; then
+      if grep -q 7. /etc/redhat-release; then
             systemctl restart zabbix-agent.service;
       else
             /etc/init.d/zabbix-agent restart
@@ -92,9 +94,9 @@ function Mysql_monitoring () {
 
 function MongoDB_monitoring () {
       cd${pwd1}
-      rm -rf input_mongodb_ip.sh
       if [ -s input_mongodb_ip.sh ]; then
           echo "input_mongodb_ip.sh [found]"
+          rm -rf input_mongodb_ip.sh
       else
           echo "input_mongodb_ip.sh not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/input_mongodb_ip.sh; then
@@ -105,6 +107,7 @@ function MongoDB_monitoring () {
       
       if [ -s nmap_mongodb.sh ]; then
           echo "nmap_mongodb.sh [found]"
+          rm -rf nmap_mongodb.sh
       else
           echo "nmap_mongodb.sh not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/nmap_mongodb.sh; then
@@ -115,6 +118,7 @@ function MongoDB_monitoring () {
 
       if [ -s userparameter_mongodb.conf ]; then
           echo "userparameter_mongodb.conf [found]"
+          rm -rf userparameter_mongodb.conf
       else
           echo "userparameter_mongodb.conf not found!!!download now..."
       if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/userparameter_mongodb.conf; then
@@ -124,7 +128,7 @@ function MongoDB_monitoring () {
       fi
       
       bash input_mongodb_ip.sh
-      if grep -q 6 /etc/redhat-release; then
+      if grep -q 7. /etc/redhat-release; then
             systemctl restart zabbix-agent.service;
       else
             /etc/init.d/zabbix-agent restart
@@ -133,9 +137,9 @@ function MongoDB_monitoring () {
 
 function Redis_monitoring () {
       cd${pwd1} 
-      rm -rf input_redis_ip.sh
       if [ -s input_redis_ip.sh ]; then
           echo "input_redis_ip.sh [found]"
+          rm -rf input_redis_ip.sh
       else
           echo "input_redis_ip.sh not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/input_redis_ip.sh; then
@@ -146,6 +150,7 @@ function Redis_monitoring () {
       
       if [ -s nmap_redis.sh ]; then
           echo "nmap_redis.sh [found]"
+          rm -rf nmap_redis.sh
       else
           echo "nmap_redis.sh not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/nmap_redis.sh; then
@@ -156,6 +161,7 @@ function Redis_monitoring () {
 
       if [ -s userparameter_redis.conf ]; then
           echo "userparameter_redis.conf [found]"
+          rm -rf userparameter_redis.conf
       else
           echo "userparameter_redis.conf not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/userparameter_redis.conf; then
@@ -165,7 +171,7 @@ function Redis_monitoring () {
       fi
       
       bash input_redis_ip.sh
-      if grep -q 6 /etc/redhat-release; then
+      if grep -q 7. /etc/redhat-release; then
             systemctl restart zabbix-agent.service;
       else
             /etc/init.d/zabbix-agent restart
@@ -173,10 +179,10 @@ function Redis_monitoring () {
 }
 
 function Memcache_monitoring () {
-      cd${pwd1} 
-      rm -rf input_memcache_ip.sh
+      cd${pwd1}
       if [ -s input_memcache_ip.sh ]; then
           echo "input_memcache_ip.sh [found]"
+          rm -rf input_memcache_ip.sh
       else
           echo "input_memcache_ip.sh not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/input_memcache_ip.sh; then
@@ -187,6 +193,7 @@ function Memcache_monitoring () {
       
       if [ -s nmap_memcache.sh ]; then
           echo "nmap_memcache.sh [found]"
+          rm -rf nmap_memcache.sh
       else
           echo "nmap_memcache.sh not found!!!download now..."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/nmap_memcache.sh; then
@@ -197,6 +204,7 @@ function Memcache_monitoring () {
 
       if [ -s userparameter_memcache.conf ]; then
           echo "userparameter_memcache.conf [found]"
+          rm -rf userparameter_memcache.conf
       else
           echo "userparameter_memcache.conf not found!!!download now..."
       if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/userparameter_memcache.conf; then
@@ -206,7 +214,7 @@ function Memcache_monitoring () {
       fi
       
       bash input_memcache_ip.sh
-      if grep -q 6 /etc/redhat-release; then
+      if grep -q 7. /etc/redhat-release; then
             systemctl restart zabbix-agent.service;
       else
             /etc/init.d/zabbix-agent restart
