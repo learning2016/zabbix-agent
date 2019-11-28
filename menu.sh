@@ -68,7 +68,7 @@ function Mysql_monitoring () {
           echo "nmap_mysql.sh [found]"
           rm -rf nmap_mysql.sh
       else
-          echo "nmap_mysql.sh not found!!!download now..."
+          echo "nmap_mysql.sh not found!!!download now...."
           if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/nmap_mysql.sh; then
               echo "Failed to download nmap_mysql.sh, please download it to ${pwd1} directory manually and try again."
               exit 1
