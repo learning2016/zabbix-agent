@@ -6,13 +6,10 @@
 pwd=/etc/zabbix
 pwd1=/etc/zabbix/zabbix_agentd.d
 
-function Initialize_the () {
-      sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
-      setenforce 0
-      yum install nmap -y
-} 
-
-function Linux_system_monitoring () {
+function Install_Zabbix_agent () {
+            sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
+            setenforce 0
+            yum install nmap -y
       if grep -q 7. /etc/redhat-release; then
             rpm -ivh http://repo.zabbix.com/zabbix/3.2/rhel/7/x86_64/zabbix-release-3.2-1.el7.noarch.rpm
             yum -y install zabbix-sender zabbix-agent zabbix-get
@@ -229,54 +226,47 @@ function menu () {
 ----------------------------------------
 |***************菜单主页***************|
 ----------------------------------------
-`echo -e "\033[33m 1)初始化Zabbix环境(必选)\033[0m"`
-`echo -e "\033[33m 2)linux系统监控\033[0m"`
-`echo -e "\033[33m 3)Mysql监控\033[0m"`
-`echo -e "\033[33m 4)MongoDB监控\033[0m"`
-`echo -e "\033[33m 5)Memcache监控\033[0m"`
-`echo -e "\033[33m 6)Redis监控\033[0m"`
-`echo -e "\033[33m 7)退出\033[0m"`
+`echo -e "\033[33m 1)安装Zabbix-agent\033[0m"`
+`echo -e "\033[33m 2)Mysql监控\033[0m"`
+`echo -e "\033[33m 3)MongoDB监控\033[0m"`
+`echo -e "\033[33m 4)Memcache监控\033[0m"`
+`echo -e "\033[33m 5)Redis监控\033[0m"`
+`echo -e "\033[33m 6)退出\033[0m"`
 EOF
 read -p "请输入对应产品的数字：" num1
 case $num1 in
-#初始化Zabbix环境
+#安装Zabbix-agent。
     1)
-      #clear
-      Initialize_the
-      menu
-      ;;
-#linux系统监控。
-    2)
       #clear
       Linux_system_monitoring
       menu
       ;;
 #Mysql监控。
-    3)
+    2)
       #clear
       Mysql_monitoring
       menu
       ;;
 #MongoDB监控。
-    4)
+    3)
       #clear
       MongoDB_monitoring
       menu
       ;;
 #Memcache监控。
-    5)
+    4)
       #clear
       Memcache_monitoring
       menu
       ;;
 #Redis监控。
-    6)
+    5)
       #clear
       Redis_monitoring
       menu
       ;;
 #退出
-    7)
+    6)
       exit 0
 esac
 }
