@@ -52,7 +52,7 @@ function Linux_system_monitoring () {
 }
 
 function Mysql_monitoring () {
-      cd${pwd1} 
+      cd$pwd1 
       if [ -e input_mysql_ip.sh ]; then
           echo "input_mysql_ip.sh [found]"
           rm -rf input_mysql_ip.sh
@@ -95,7 +95,7 @@ function Mysql_monitoring () {
 }
 
 function MongoDB_monitoring () {
-      cd${pwd1}
+      cd$pwd1
       if [ -e input_mongodb_ip.sh ]; then
           echo "input_mongodb_ip.sh [found]"
           rm -rf input_mongodb_ip.sh
@@ -138,7 +138,7 @@ function MongoDB_monitoring () {
 }
 
 function Redis_monitoring () {
-      cd${pwd1} 
+      cd$pwd1 
       if [ -e input_redis_ip.sh ]; then
           echo "input_redis_ip.sh [found]"
           rm -rf input_redis_ip.sh
@@ -181,7 +181,7 @@ function Redis_monitoring () {
 }
 
 function Memcache_monitoring () {
-      cd${pwd1}
+      cd$pwd1
       if [ -e input_memcache_ip.sh ]; then
           echo "input_memcache_ip.sh [found]"
           rm -rf input_memcache_ip.sh
