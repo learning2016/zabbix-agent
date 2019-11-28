@@ -9,6 +9,7 @@ pwd1=/etc/zabbix/zabbix_agentd.d
 function Initialize_the () {
       sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
       setenforce 0
+      yum install nmap -y
 } 
 
 function Linux_system_monitoring () {
