@@ -238,7 +238,7 @@ case $num1 in
 #安装Zabbix-agent。
     1)
       #clear
-      Linux_system_monitoring
+      Install_Zabbix_agent
       menu
       ;;
 #Mysql监控。
