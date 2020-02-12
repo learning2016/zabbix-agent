@@ -51,29 +51,6 @@ function Install_Zabbix_agent () {
 
 function Mysql_monitoring () {
       cd $pwd1
-      '''
-      if [ -e input_mysql_ip.sh ]; then
-          echo "input_mysql_ip.sh [found]"
-          rm -rf input_mysql_ip.sh
-      else
-          echo "input_mysql_ip.sh not found!!!download now..."
-          if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/input_mysql_ip.sh; then
-              echo "Failed to download input_mysql_ip.sh, please download it to ${pwd1} directory manually and try again."
-              exit 1
-          fi
-      fi
-
-      if [ -e nmap_mysql.sh ]; then
-          echo "nmap_mysql.sh [found]"
-          rm -rf nmap_mysql.sh
-      else
-          echo "nmap_mysql.sh not found!!!download now...."
-          if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/nmap_mysql.sh; then
-              echo "Failed to download nmap_mysql.sh, please download it to ${pwd1} directory manually and try again."
-              exit 1
-          fi
-      fi
-      '''
 
       if [ -e userparameter_mysql.conf ]; then
           echo "userparameter_mysql.conf [found]"
@@ -95,20 +72,6 @@ function Mysql_monitoring () {
 }
 
 function MongoDB_monitoring () {
-      '''
-      cd $pwd1
-      if [ -e input_mongodb_ip.sh ]; then
-          echo "input_mongodb_ip.sh [found]"
-          rm -rf input_mongodb_ip.sh
-      else
-          echo "input_mongodb_ip.sh not found!!!download now..."
-          if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/input_mongodb_ip.sh; then
-              echo "Failed to download input_mongodb_ip.sh, please download it to ${pwd1} directory manually and try again."
-              exit 1
-          fi
-      fi
-      
-      '''
       cd $pwd1
       if [ -e nmap_mongodb.sh ]; then
           echo "nmap_mongodb.sh [found]"
@@ -142,19 +105,6 @@ function MongoDB_monitoring () {
 }
 
 function Redis_monitoring () {
-    '''
-      cd $pwd1 
-      if [ -e input_redis_ip.sh ]; then
-          echo "input_redis_ip.sh [found]"
-          rm -rf input_redis_ip.sh
-      else
-          echo "input_redis_ip.sh not found!!!download now..."
-          if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/input_redis_ip.sh; then
-              echo "Failed to download input_redis_ip.sh, please download it to ${pwd1} directory manually and try again."
-              exit 1
-          fi
-      fi
-    '''
       cd $pwd1
       if [ -e nmap_redis.sh ]; then
           echo "nmap_redis.sh [found]"
@@ -187,19 +137,6 @@ function Redis_monitoring () {
 }
 
 function Memcache_monitoring () {
-      '''
-      cd $pwd1
-      if [ -e input_memcache_ip.sh ]; then
-          echo "input_memcache_ip.sh [found]"
-          rm -rf input_memcache_ip.sh
-      else
-          echo "input_memcache_ip.sh not found!!!download now..."
-          if ! wget -c https://raw.githubusercontent.com/learning2016/zabbix-agent/master/input_memcache_ip.sh; then
-              echo "Failed to download input_memcache_ip.sh, please download it to ${pwd1} directory manually and try again."
-              exit 1
-          fi
-      fi
-      '''
       cd $pwd1
       if [ -e nmap_memcache.sh ]; then
           echo "nmap_memcache.sh [found]"
